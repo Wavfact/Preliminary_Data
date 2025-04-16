@@ -51,8 +51,8 @@ jobs:
       - name: Commit and Push Changes
         if: steps.check-csv.outcome == 'success'
         run: |
-          git config --global user.name "Aaron Raimist" # "GitHub Actions"
-          git config --global user.email "aaron@raim.ist" # "actions@github.com"
+          git config --global user.name "Dennis Megarry" # "GitHub Actions"
+          git config --global user.email "dennis@megarry.com" # "actions@github.com"
 
           branch_name='${{ steps.date.outputs.date }}-update'
 
