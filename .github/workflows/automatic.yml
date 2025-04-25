@@ -66,6 +66,8 @@ jobs:
           git push origin "$branch_name"
 
       - name: create pull request
-        run: gh pr create -B main -H '${{ steps.date.outputs.date }}-update' --title '${{ steps.date.outputs.date }} Update' --body 'Automatically created with GitHub Actions.'
+        run: |
+          gh pr create -B main -H '${{ steps.date.outputs.date }}-update' --title '${{ steps.date.outputs.date }} Update' --body 'Automatically created with GitHub Actions.'
+          gh pr merge --auto --merge "${{ steps.date.outputs.date }}-update"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
