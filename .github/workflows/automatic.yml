@@ -63,7 +63,7 @@ jobs:
 
           git commit -m '${{ steps.date.outputs.date }} Update' -m "Automatically created with GitHub Actions."
 
-          git push origin "$branch_name"
+          git push -f origin "$branch_name"
 
       - name: create pull request
         run: |
