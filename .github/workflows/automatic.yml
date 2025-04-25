@@ -68,6 +68,7 @@ jobs:
       - name: create pull request
         run: |
           gh pr create -B main -H '${{ steps.date.outputs.date }}-update' --title '${{ steps.date.outputs.date }} Update' --body 'Automatically created with GitHub Actions.'
-          gh pr merge --auto --merge "${{ steps.date.outputs.date }}-update"
+          gh pr review --approve "${{ github.event.pull_request.number }}" # Requires the pull_request event context
+          gh pr merge --auto --merge "${{ github.event.pull_request.number }}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
