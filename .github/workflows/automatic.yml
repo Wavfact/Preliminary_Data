@@ -71,7 +71,7 @@ jobs:
           pr_url=$(gh pr create -B main -H '${{ steps.date.outputs.date }}-update' --title '${{ steps.date.outputs.date }} Update' --body 'Automatically created with GitHub Actions.')
           pr_number=$(echo "$pr_url" | sed -n 's#.*/pull/\([0-9]*\)$#\1#p')
           echo "Pull Request Number: $pr_number"
-          gh pr merge --auto --merge "$pr_number"
+          gh pr merge --admin --merge "$pr_number"
 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
