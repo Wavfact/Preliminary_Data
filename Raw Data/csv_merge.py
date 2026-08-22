@@ -9,7 +9,8 @@ df_from_each_file = [
         f,
         keep_date_col=True,
         infer_datetime_format=True,
-        encoding="utf-8",
+        #encoding="utf-8",
+        encoding="cp1252",
         #encoding_errors="backslashreplace",
 
         # doesn't work well since some data is invalid
