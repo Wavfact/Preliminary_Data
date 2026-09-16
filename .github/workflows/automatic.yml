@@ -20,7 +20,7 @@ jobs:
 
       - name: Download new CSV
         run: |
-          if curl -o "Raw Data/faa_ai_prelim ${{ steps.date.outputs.date }}.csv" https://www.asias.faa.gov/apex/f?p=100:93::FLOW_EXCEL_OUTPUT_R16070756597770675_en; then
+          if curl -o "Raw Data/faa_ai_prelim ${{ steps.date.outputs.date }}.csv" https://extranet.asias.faa.gov/apex/f?p=100:93::FLOW_EXCEL_OUTPUT_R16070756597770675_en; then
             echo "CSV download successful."
           else
             echo "CSV download failed."
